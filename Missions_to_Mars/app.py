@@ -22,8 +22,9 @@ def scraper():
     #obtain the collection from mongo db
     listings = mongo.db.listings
 
-    # call function in scrape_mars lib file
+    # retrieve data from function in scrape_mars lib file
     marsDataDict = scrape_mars.scrape()
+    # update new collection
     listings.update({}, marsDataDict, upsert=True)
     return redirect("/", code=302)
 
