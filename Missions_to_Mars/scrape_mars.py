@@ -127,6 +127,7 @@ def scrape():
     marsData['hemisphere_image_urls'] = hemisphere_image_urls
     #print all data from diction 
     print(marsData)
+    # return the data to app.py
     return marsData
 
 
