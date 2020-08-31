@@ -53,6 +53,7 @@ def scrape():
     browser.visit(splinter_url)
 
     base_url = 'https://www.jpl.nasa.gov'
+    #splinter
     html = browser.html
     #Parse HTML object with BeautifulSoup
     soup = bs(html, 'html.parser')
