@@ -5,14 +5,14 @@ import pandas as pd
 from splinter import Browser
 from webdriver_manager.chrome import ChromeDriverManager
 
-
-
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
     executable_path = {'executable_path': ChromeDriverManager().install()}
     return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
+
+    # I import the code for mission_to_mars.ipynb
     #inital the connection to chrome browser
     browser = init_browser()
 
@@ -23,8 +23,6 @@ def scrape():
     response = requests.get(url)
     #BeautifulSoup object
     soup = bs(response.text, 'html.parser')
-
-
 
     #Retrieve the latest subject and content from the Mars website
     news_title = soup.find('div', class_="content_title").find('a').text
