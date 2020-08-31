@@ -105,7 +105,7 @@ def scrape():
         
     print(full_resolution_image_url)
 
-
+    #inital the list for the dicton
     hemisphere_image_urls = []
     base_url = 'https://astrogeology.usgs.gov'
 
