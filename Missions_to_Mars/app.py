@@ -19,6 +19,7 @@ def index():
 
 @app.route("/scrape")
 def scraper():
+    #obtain the collection from mongo db
     listings = mongo.db.listings
     marsDataDict = scrape_mars.scrape()
     listings.update({}, marsDataDict, upsert=True)
