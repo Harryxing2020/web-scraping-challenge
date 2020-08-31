@@ -21,6 +21,8 @@ def index():
 def scraper():
     #obtain the collection from mongo db
     listings = mongo.db.listings
+
+    # call function in scrape_mars lib file
     marsDataDict = scrape_mars.scrape()
     listings.update({}, marsDataDict, upsert=True)
     return redirect("/", code=302)
