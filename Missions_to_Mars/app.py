@@ -13,6 +13,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 def index():
+    # get the collection
     listings = mongo.db.listings.find_one()
     return render_template("index.html", listings=listings)
 
