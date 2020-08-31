@@ -81,7 +81,7 @@ def scrape():
     df.set_index('Facts', inplace=True)
     df
 
-    #create HTML table
+    #create HTML table and the bold border 
     html_table = df.to_html(border=3)
     #Remove enter characters 
     marsData['mars_facts_html'] = html_table.replace('\n', '')
