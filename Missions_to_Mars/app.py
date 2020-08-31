@@ -26,6 +26,7 @@ def scraper():
     marsDataDict = scrape_mars.scrape()
     # update new collection
     listings.update({}, marsDataDict, upsert=True)
+    #redirect to default page
     return redirect("/", code=302)
 
 
