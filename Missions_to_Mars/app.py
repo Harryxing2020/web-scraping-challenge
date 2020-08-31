@@ -15,6 +15,7 @@ mongo = PyMongo(app)
 def index():
     # get the collection
     listings = mongo.db.listings.find_one()
+    # call index file in template 
     return render_template("index.html", listings=listings)
 
 
